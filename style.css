@@ -19,7 +19,7 @@ body {
 
 .grid {
     display: flex;
-    height: 80vh;
+    height: 74vh;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
@@ -74,9 +74,54 @@ body {
     margin: 10px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgb(15, 15, 15);
+    color: rgb(248, 248, 248);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.github-repo {
+    margin-top: 10px;
+}
+
+.github-repo a {
+    display: inline-block;
+    padding: 5px 10px;
+    color: rgb(248, 248, 248);
+    text-decoration: none;
+}
+
+.github-repo a:hover {
+    display: inline-flex;
+    white-space: nowrap;
+    -moz-box-align: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+    text-align: center;
+    font-family: "gilroy-bold";
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    /* margin: 10px; */
+}
+
+
 /* Mobile devices */
 @media only screen and (max-width: 768px) {
     
+    .grid {
+        height: 65vh;
+    }
+
     .grid-container {
       width: 300px;
       height: 300px;
