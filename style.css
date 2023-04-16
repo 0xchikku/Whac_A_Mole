@@ -93,10 +93,4 @@ body {
         font-size: 24px;
         padding: 8px 20px;
     }
-
-    .mole {
-        background-image: url('./assets/mole.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-  }
+}
