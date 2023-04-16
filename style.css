@@ -43,7 +43,9 @@ body {
 }
 
 .mole {
-    background-color: burlywood;
+    background-image: url('./assets/mole.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .btn {
