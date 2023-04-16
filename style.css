@@ -44,7 +44,6 @@ body {
 
 .mole {
     background-color: burlywood;
-    /* background-image: 🐀; */
 }
 
 .btn {
@@ -60,7 +59,7 @@ body {
     position: relative;
     pointer-events: auto;
     text-align: center;
-    padding: 10px 30px;;
+    padding: 10px 30px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-size: 24px;
