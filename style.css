@@ -71,3 +71,21 @@ body {
     cursor: pointer;
     margin: 10px;
 }
+
+/* Mobile devices */
+@media only screen and (max-width: 768px) {
+    .grid-container {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .square {
+      width: 90px;
+      height: 90px;
+    }
+    
+    .start-stop-game {
+      font-size: 18px;
+      padding: 8px 20px;
+    }
+  }
