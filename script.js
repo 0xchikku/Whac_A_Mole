@@ -9,7 +9,9 @@ let startStopGameButton;
 const squares = [];
 let noOfSquare = 9;
 let score = 0
-let countDown = timeLeftDisplay.textContent
+scoreDisplay.textContent = score;
+let countDown = 30;
+timeLeftDisplay.textContent = countDown;
 let molePosition = null;
 let moveMoleTimerId = null;
 let countDownTimerId = null;
@@ -87,7 +89,7 @@ function startCountDown() {
     if(countDown === 0) {
         alert(`Game over! Your Score: ${score}`);
         stopGame();
-        countDown = 3;
+        countDown = 30;
         score = 0
         updateTimeLeft(countDown);
         updateScore();
