@@ -15,6 +15,7 @@ timeLeftDisplay.textContent = countDown;
 let molePosition = null;
 let moveMoleTimerId = null;
 let countDownTimerId = null;
+const audioContext = new AudioContext();
 
 
 function createButton() {
@@ -37,13 +38,59 @@ function randomPosition(){
     return Math.floor(Math.random() * 9);
 }
 
+function hitMoleAudio(){
+    fetch('./audio/punch.mp3')
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+    .then(audioBuffer => {
+        const sourceNode = audioContext.createBufferSource();
+        sourceNode.buffer = audioBuffer;
+        sourceNode.connect(audioContext.destination);
+        sourceNode.start();
+    })
+    .catch(error => {
+        console.log(`Error in hitMoleAudio: ${error}`);
+    });
+}
+
+async function missedMoleAudio() {
+    try{
+        const response = await fetch('./audio/laugh.wav');
+        const arrayBuffer = await response.arrayBuffer();
+        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+        const sourceNode = audioContext.createBufferSource();
+        sourceNode.buffer = audioBuffer;
+        sourceNode.connect(audioContext.destination);
+        sourceNode.start();
+    }catch(error){
+        console.log(`Error in missedMoleAudio: ${error}`);
+    }
+}
+
+function molePopOutOfHole() {
+    fetch('./audio/vooh.mp3')
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+    .then(audioBuffer => {
+        const sourceNode = audioContext.createBufferSource();
+        sourceNode.buffer = audioBuffer;
+        sourceNode.connect(audioContext.destination);
+        sourceNode.start();
+    })
+    .catch(error => {
+        console.log(`Error in molePopOutOfAudio : ${error}`);
+    });
+}
+
 function checkHit(){
     if(Number(this.id) === molePosition){
+        hitMoleAudio();
         molePosition = null;
         score++;
         updateScore(score);
     }else{
-        console.log('Miss');
+        missedMoleAudio();
     }
 }
 
@@ -69,6 +116,7 @@ function addMoleToRandomSquare(){
     molePosition = randomPosition()
     const randomSquare = squares[molePosition];
     randomSquare.classList.add('mole');
+    molePopOutOfHole();
 }
 
 function moveMole() {
