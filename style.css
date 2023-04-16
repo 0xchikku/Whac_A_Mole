@@ -85,7 +85,23 @@ body {
     }
     
     .start-stop-game {
-      font-size: 18px;
-      padding: 8px 20px;
+        display: inline-flex;
+        white-space: nowrap;
+        -moz-box-align: center;
+        align-items: center;
+        position: relative;
+        pointer-events: auto;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: 24px;
+        font-family: "gilroy-bold";
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        line-height: 30px;
+        border-radius: 40px;
+        cursor: pointer;
+        margin: 10px;
+        padding: 8px 20px;
     }
   }
