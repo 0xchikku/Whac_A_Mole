@@ -104,7 +104,7 @@ function addMoleToRandomSquare(){
 }
 
 function moveMole() {
-    moveMoleTimerId = setInterval(addMoleToRandomSquare, 650);
+    moveMoleTimerId = setInterval(addMoleToRandomSquare, 420);
 }
 
 function updateScore(score = 0){
