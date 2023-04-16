@@ -68,21 +68,6 @@ async function missedMoleAudio() {
     }
 }
 
-function molePopOutOfHole() {
-    fetch('./audio/vooh.mp3')
-    .then(response => response.arrayBuffer())
-    .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
-    .then(audioBuffer => {
-        const sourceNode = audioContext.createBufferSource();
-        sourceNode.buffer = audioBuffer;
-        sourceNode.connect(audioContext.destination);
-        sourceNode.start();
-    })
-    .catch(error => {
-        console.log(`Error in molePopOutOfAudio : ${error}`);
-    });
-}
-
 function checkHit(){
     if(Number(this.id) === molePosition){
         hitMoleAudio();
@@ -116,7 +101,6 @@ function addMoleToRandomSquare(){
     molePosition = randomPosition()
     const randomSquare = squares[molePosition];
     randomSquare.classList.add('mole');
-    molePopOutOfHole();
 }
 
 function moveMole() {
